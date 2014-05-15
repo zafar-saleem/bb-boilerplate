@@ -1,0 +1,15 @@
+{
+  "name": "bb-boilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/zafar-saleem/test",
+  "authors": [
+    "Zafar Saleem"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": null,
+    "requirejs": null,
+    "underscore": null,
+    "backbone": null
+  }
+}
