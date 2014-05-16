@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 				csslintrc: '.csslintrc'
 			},
 			target: {
-				src: 'src/styles/css/**/*.css'
+				src: 'src/styles/styles/**/*.css'
 			}
 		},
 
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
 		cssmin: {
 			options: {},
 			target: {
-				src: 'dist/css/*.css',
+				src: 'dist/styles/**/*.css',
 				dest: 'dist/styles/styles.min.css'
 			}
 		},
