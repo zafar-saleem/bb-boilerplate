@@ -8,7 +8,3 @@ require.config({
 		'backbone': 'libs/backbone/backbone'
 	}
 });
-
-require(['views/app'], function (AppView) {
-	new AppView();
-});
