@@ -1,4 +1,4 @@
-define(['backbone'], function(Backbone) {
+define(['backbone', 'text!../../partials/sample.html'], function(Backbone, SampleView) {
    
     var App = Backbone.View.extend({
     	initialize: function () {
