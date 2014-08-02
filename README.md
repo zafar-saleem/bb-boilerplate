@@ -1,5 +1,5 @@
 <h3>Introduction</h3>
-Bb boilerplate is backbone boilerplate. It consists of Backbone, Underscore and Requirejs.
+bb boilerplate is backbone boilerplate. It consists of Backbone, Underscore and Requirejs.
 
 <h3>Requirements</h3>
 
