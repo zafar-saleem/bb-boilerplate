@@ -45,7 +45,11 @@ module.exports = function (grunt) {
 			}
 		},
 
-		clean: ['dist/js/', 'dist/css/'],
+		clean: {
+			js: ['dist/js/'],
+			css: ['dist/css/'],
+			hooks: ['.git/hooks/pre-commit']
+		},
 
 		processhtml: {
 			dist: {
@@ -65,6 +69,14 @@ module.exports = function (grunt) {
 					'dist/index.html': 'dist/index.html'
 				}
 			}
+		},
+		
+		// Run shell commands
+		shell: {
+			hooks: {
+				// Copy the project's pre-commit hook into .git/hooks
+				command: 'cp pre-commit .git/hooks/'
+			}
 		}
 
 	});
@@ -77,6 +89,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-shell');
 	
 	grunt.registerTask('default', [
 			'jshint', 
@@ -89,4 +102,6 @@ module.exports = function (grunt) {
 			'htmlmin'
 		]
 	);
+
+	grunt.registerTask('hookmeup', ['clean:hooks', 'shell:hooks']);
 }
