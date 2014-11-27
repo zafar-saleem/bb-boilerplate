@@ -12,13 +12,13 @@ def jshint():
     
     # get all staged files
     f = os.popen('git diff --cached --name-only --diff-filter=ACM')
+    
+    print("\nValidating JavaScript...")
 
     for file in f.read().splitlines():
 
         # makes sure we're dealing javascript files
-        if file.endswith('.js') and not file.startswith('node_modules/'):       
-            
-            print("\nValidating JavaScript...")
+        if file.endswith('.js') and not file.startswith('node_modules/'):
 
             g = os.popen('jshint ' + file)
         
@@ -26,21 +26,23 @@ def jshint():
             for error in g.readlines():
                 jserrors.append(error)
 
-            # got js errors?
-            if jserrors:
-                print("\nBelow errors are found while parsing JavaScript:")
-                for i, error in enumerate(jserrors):
-                    print(error, end=" "),
-                
-                # Abort the commit
-                sys.exit(1) 
-            else:
-                print("\nNo errors found in JavaScript. \n")
+    # got js errors?
+    if jserrors:
+        print("\nBelow errors are found while parsing JavaScript:")
+        for i, error in enumerate(jserrors):
+            print(error, end=" "),
+        
+        # Abort the commit
+        sys.exit(1) 
+    else:
+        print("\nNo errors found in JavaScript. \n")
 
+
+    print("\nValidating CSS...")
+    
+    for file in f.read().splitlines():
         # makes sure we're dealing CSS files
-        if file.endswith('.css') and not file.startswith('node_modules/'):       
-            
-            print("\nValidating CSS...")
+        if file.endswith('.css') and not file.startswith('node_modules/'):
 
             g = os.popen('csslint ' + file)
         
@@ -48,20 +50,22 @@ def jshint():
             for error in g.readlines():
                 csserrors.append(error)
 
-            # got css errors?
-            if csserrors:
-                print("\nBelow errors are found while parsing CSS:")
-                for i, error in enumerate(csserrors):
-                    print(error, end=" "),
-                
-                # Abort the commit
-                sys.exit(1) 
-            else:
-                print("\nNo errors found in CSS. \n")
+            print(csserrors)
 
-            print("\nCommit successfull. \n")
-            # All good
-            sys.exit(0) 
+    # got css errors?
+    if csserrors:
+        print("\nBelow errors are found while parsing CSS:")
+        for i, error in enumerate(csserrors):
+            print(error, end=" "),
+        
+        # Abort the commit
+        sys.exit(1) 
+    else:
+        print("\nNo errors found in CSS. \n")
+
+    print("\nCommit successfull. \n")
+    # All good
+    sys.exit(0) 
     
 if __name__ == '__main__':
     jshint()
