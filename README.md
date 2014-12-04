@@ -10,6 +10,7 @@ App Boilerplate requires Grunt that needs to be installed and needs, but not mus
 1. Clone this repository.
 2. Run npm install command to download and install all Grunt dependencies.
 3. Run bower install to download all project dependencies such as jQuery, Backbonejs, Underscore and Requirejs.
+4. Now run `grunt hookmeup` to add pre-commit hooks for jshint and csslint.
 
 Once application is completed then run following command to build your application for production. 
 1. Grunt
