@@ -2,3 +2,5 @@ node_modules/*
 dist/*
 src/js/libs/*
 .DS_Store
+.sass-cache/
+src/css/*

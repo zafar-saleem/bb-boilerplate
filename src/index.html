@@ -3,12 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Title</title>
-    <!-- <link rel="stylesheet" href="styles/css/styles.css"> -->
+    <!-- <link rel="stylesheet" href="styles/css/styles.min.css"> -->
     
 </head>
 <body>
 	<!-- build:js scripts/scripts.min.js -->
-	<script data-main="js/main" src="js/libs/requirejs/require.js"></script>
+    <script src="js/libs/requirejs/require.js"></script>
+    <script>
+        require(['js/config'], function () {
+            require(['main'], function (main) {});
+        });
+    </script>
 	<!-- /build -->
 </body>
 </html>

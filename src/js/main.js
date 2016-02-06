@@ -1,7 +1,7 @@
 /*global require:false */
 require.config({
 	
-	urlArgs: "version=" + (new Date()).getTime(),,
+	urlArgs: "version=" + (new Date()).getTime(),
 
 	paths: {
 		'jquery'     : 'libs/jquery/dist/jquery',
