@@ -1,5 +1,5 @@
 ## Introduction
-bb boilerplate is backbone boilerplate. It consists of Backbone, Underscore and Requirejs.
+Maia is a kickstarter for projects the utilizes Backbone library. It consists of Backbone, Underscore, jQuery and Requirejs.
 
 ## Requirements
 
